@@ -1,19 +1,22 @@
-const mongoose = require('mongoose');
+const mongoose = require("mongoose");
+const { Schema } = mongoose;
 
-const todoSchemas = mongoose.Schema({
-    title:{
-        type : String,
-        required: true,
+const todoSchema = new Schema(
+    {
+        title: {
+            type: String,
+            required: true,
+        },
+        description: String,
+        status: {
+            type: String,
+            enum: ["active", "inactive"],
+        }
     },
-    description:String,
-    status:{
-        type:String,
-        enum: ['active', 'inactive'],
-    },
-    date: {
-        type:Date,
-        default:Date.now
+    {
+        timestamps:true,
+        versionKey:false
     }
-})
+);
 
-exports.default = todoSchemas;
+module.exports = todoSchema;

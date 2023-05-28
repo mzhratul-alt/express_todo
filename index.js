@@ -16,7 +16,7 @@ mongoose
     .catch((err)=> console.log(err))
 
 //Routes
-app.use('todo', todoHandler)
+app.use('/todo', todoHandler)
 
 //Default error handler
 function errorHandler(err, req, res, next) {
