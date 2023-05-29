@@ -8,7 +8,7 @@ const port = 8000;
 
 //Database Connection with Mongoose
 mongoose
-    .connect("mongodb://localhost/todos",{
+    .connect("mongodb://127.0.0.1:27017/todos",{
         useNewUrlParser:true,
         useUnifiedTopology:true
     })
